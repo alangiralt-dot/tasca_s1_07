@@ -41,10 +41,7 @@ if (
         $urlVariables = '?user_name=' . urlencode($_POST['user_name']) . '&password=' . urlencode($_POST['password']) . '&language=' . urlencode($_POST['language']);
     }
 } else {
-    $errorMessage =
-        '<div class="error-wrapper"><h3>Error</h3>' .
-        'At least one key of the form was not found in $_POST' .
-        '</div>';
+    $errorMessage = '<div class="error-wrapper"><h3>Error</h3>At least one key of the form was not found in $_POST</div>';
 }
 ?>
 <!DOCTYPE html>
