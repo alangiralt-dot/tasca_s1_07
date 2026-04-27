@@ -21,9 +21,8 @@ if (
         if (preg_match("/[A-Z]{1,}/", $_POST['password']) !== 1) throw new InvalidPasswordException('The password must have at least one uppercase letter.');
         if (preg_match("/[!@#$%^&*]{1,}/", $_POST['password']) !== 1) throw new InvalidPasswordException('The password must have at least one special character.');
         if (preg_match("/[a-zA-Z0-9àèéíòóúïü_!@#$%^&*-]{8,64}/", $_POST['password']) !== 1) throw new InvalidPasswordException('The password must be between 8 and 64 characters.');
-        if ($_POST['user_name'] === $_POST['password']) throw new InvalidPasswordException('The password and username cannot be the same.');
         if (preg_match("/^(?:English|Chinese|Spanish)$/", $_POST['language']) !== 1) throw new InvalidLanguageException('The language is not valid.');
-        if (preg_match("/^(?:Dark|Light) mode$/", $_POST['language']) !== 1) throw new InvalidModeException('The mode is not valid.');
+        if (preg_match("/^(?:dark|light)$/", $_POST['mode']) !== 1) throw new InvalidModeException('The mode is not valid.');
 
         $_SESSION["language"] = $_POST["language"];
         $_SESSION["mode"] = $_POST["mode"];
