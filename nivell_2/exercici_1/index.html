@@ -41,13 +41,13 @@
   </main>
   <script>
     const params = new URLSearchParams(window.location.search);
-    //if (params > 0) {
-      document.querySelector('input[name="user_name"]').value=params.get('user_name');
-      document.querySelector('input[name="password"]').value=params.get('password');
-      document.querySelector('select[name="language"]').value=params.get('language');
-      document.querySelector('select[name="mode"]').value=params.get('mode');
-    //}
-</script>
+    if (params.size > 0) {
+      document.querySelector('input[name="user_name"]').value = params.get('user_name');
+      document.querySelector('input[name="password"]').value = params.get('password');
+      document.querySelector('select[name="language"]').value = params.get('language');
+      document.querySelector('select[name="mode"]').value = params.get('mode');
+    }
+  </script>
 </body>
 
 </html>
